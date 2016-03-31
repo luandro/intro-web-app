@@ -14,6 +14,8 @@ export default class Presentation extends React.Component {
 			<Router history={browserHistory}>
 				<Route path="/" component={MainIndex}/>
 				<Route path="/week-1" component={Week1}/>
+				<Route path="/week-2" component={Week1}/>
+				<Route path="/week-3" component={Week1}/>
 				<Route path="*" component={NotFound}/>
 			</Router>
 		);
