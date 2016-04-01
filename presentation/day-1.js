@@ -72,9 +72,9 @@ export default class Presentation extends React.Component {
               <Text bold caps textColor="tertiary">veja no Github</Text>
             </Link>
           </Slide>
-          <Slide transition={["slide"]} bgColor="#000" notes="You can even put notes on your slide. How awesome is that?">
+          <Slide transition={["slide"]} bgColor="#000">
             <Heading size={2} caps fit textColor="primary" textFont="primary">
-              1ª Semana
+              1º Dia
             </Heading>
             <List style={{color: '#fff'}}>
               <ListItem>Introdução</ListItem>
@@ -86,7 +86,7 @@ export default class Presentation extends React.Component {
               <ListItem>Idealização do aplicativo</ListItem>
             </List>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
+          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="O que são aplicativos? Breve história. Futuro de aplicativos para web.">
             <Text>2005</Text>
             <Image src={images.gmail.replace("/", "")} height="80"></Image>
             <Text>2007</Text>

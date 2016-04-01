@@ -52,9 +52,9 @@ export default class MainIndex extends React.Component {
 		            	<Heading size={1} fit caps lineHeight={1} textColor="#fff" style={{textShadow: '2px 2px #000'}}>
 		             		Introdução a Criação de Aplicativos para Web
 		            	</Heading>
-		            	<p><RouteLink style={{color: '#fff'}} to="week-1">Ferramentas e introdução a web</RouteLink></p>
-		            	<p><RouteLink style={{color: '#fff'}} to="week-2">Arquitetura e Bibliotecas</RouteLink></p>
-		            	<p><RouteLink style={{color: '#fff'}} to="week-3">Servidor e distribuição</RouteLink></p>
+		            	<p><RouteLink style={{color: '#fff'}} to="day-1">Ferramentas e introdução a web</RouteLink></p>
+		            	<p><RouteLink style={{color: '#fff'}} to="day-2">Arquitetura e Bibliotecas</RouteLink></p>
+		            	<p><RouteLink style={{color: '#fff'}} to="day-3">Servidor e distribuição</RouteLink></p>
 		            	<Link href="https://github.com/luandro/intro-web-app">
 			              	<Text bold caps textColor="tertiary">Veja no Github</Text>
 			            </Link>
