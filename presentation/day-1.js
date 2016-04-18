@@ -83,6 +83,7 @@ export default class Presentation extends React.Component {
           <Slide transition={["slide"]} bgColor="#000">
 
             <List style={{color: '#fff'}}>
+              <ListItem>Apps</ListItem>
               <ListItem>Como funciona a web?</ListItem>
               <ListItem>IDE</ListItem>
               <ListItem>Git & Github</ListItem>
@@ -198,6 +199,19 @@ export default class Presentation extends React.Component {
               <ListItem>Quem iniciou uma solicitação de rede particular?</ListItem>
               <ListItem>Quanto tempo foi gasto nas várias fases de rede para um recurso particular?</ListItem>
             </List>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={2}>Recursos online</Heading>
+            <List>
+              <ListItem><Link href="http://stackoverflow.com/">Stackoverflow</Link></ListItem>
+              <ListItem><Link href="https://github.com/sindresorhus/awesome">Awesome lists</Link></ListItem>
+              <ListItem>Reddit (<Link href="https://www.reddit.com/r/javascript">Javascript</Link>, <Link href="https://www.reddit.com/r/webdev">Webdev</Link>, <Link href="https://www.reddit.com/r/node">Node</Link>)</ListItem>
+              <ListItem><Link href="http://javascriptweekly.com/">Javascript weekly</Link></ListItem>
+              <ListItem><Link href="https://github.com/kamranahmedse/githunt">Githunt</Link></ListItem>
+            </List>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={2}>Idealização do aplicativo</Heading>
           </Slide>
         </Deck>
       </Spectacle>
