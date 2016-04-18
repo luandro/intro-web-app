@@ -2,7 +2,6 @@
 
 Created with [Spectacle](https://github.com/FormidableLabs/spectacle/blob/master/README.markdown).
 
-
 ## Development
 
 After downloading the boilerplate, your first order of business is to open terminal and run `npm install`

@@ -36,7 +36,7 @@ import Interactive from "../assets/interactive";
 
 
 const images = {
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/build/markdown.png")
 };
 
 preloader(images);

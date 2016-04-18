@@ -34,17 +34,18 @@ import Interactive from "../assets/interactive";
 
 
 const images = {
-  gmail: require("../assets/gmail.png"),
-  android: require("../assets/android.png"),
-  apple: require("../assets/apple.png"),
-  instagram: require("../assets/instagram.png"),
-  whatsapp: require("../assets/whatsapp.png"),
-  facebook: require("../assets/facebook.png"),
-  pokemon: require("../assets/pokemon.png"),
-  atomLogo: require("../assets/atom-logo.png"),
-  clientServer: require("../assets/Client-server-model.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  gmail: require("../assets/build/gmail.png"),
+  android: require("../assets/build/android.png"),
+  apple: require("../assets/build/apple.png"),
+  instagram: require("../assets/build/instagram.png"),
+  whatsapp: require("../assets/build/whatsapp.png"),
+  facebook: require("../assets/build/facebook.png"),
+  pokemon: require("../assets/build/pokemon.png"),
+  atomLogo: require("../assets/build/atom-logo.png"),
+  node: require("../assets/build/nodejs.png"),
+  clientServer: require("../assets/build/Client-server-model.png"),
+  logo: require("../assets/build/formidable-logo.svg"),
+  markdown: require("../assets/build/markdown.png")
 };
 
 preloader(images);
@@ -73,16 +74,15 @@ export default class Presentation extends React.Component {
             </Link>
           </Slide>
           <Slide transition={["slide"]} bgColor="#000">
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              1º Dia
-            </Heading>
+
             <List style={{color: '#fff'}}>
-              <ListItem>Introdução</ListItem>
+              <ListItem>Breve história dos aplicativos</ListItem>
               <ListItem>IDEs</ListItem>
-              <ListItem>CLI</ListItem>
-              <ListItem>Git</ListItem>
-              <ListItem>Chrome Dev Tools</ListItem>
+              <ListItem>NodeJS & NPM</ListItem>
+              <ListItem>Git & Github</ListItem>
+              <ListItem>Dev Tools</ListItem>
               <ListItem>Como funciona a web?</ListItem>
+              <ListItem>Recursos online</ListItem>
               <ListItem>Idealização do aplicativo</ListItem>
             </List>
           </Slide>
@@ -107,30 +107,31 @@ export default class Presentation extends React.Component {
           <Slide transition={["zoom", "fade"]} bgColor="primary">
             <Heading size={2}>IDEs</Heading>
             <Heading size={1} fit caps>Integrated development environment</Heading>
-            <Text>Disponibiliza varias facilidades para desenvolvedores como linting, debug, hightlight </Text>
-            <Text textColor="#D4DFE6">Vim, Sublime Text, Atom, Brackets</Text>
+            <Text>Disponibiliza várias facilidades para desenvolvedores como linting, debugging, hightlighting</Text>
+            <Text textColor="#D4DFE6">Vim, Sublime Text, Atom, Brackets...</Text>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <Image src={images.atomLogo.replace("/", "")}></Image>
-            <p><Code fit="true">$ sudo add-apt-repository ppa:webupd8team/atom</Code></p>
-            <p><Code fit="true">$ sudo apt-get update</Code></p>
-            <p><Code fit="true">$ sudo apt-get install atom</Code></p>
+            <p><Code fit>$ sudo add-apt-repository ppa:webupd8team/atom</Code></p>
+            <p><Code fit>$ sudo apt-get update</Code></p>
+            <p><Code fit>$ sudo apt-get install atom</Code></p>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={2}>CLI</Heading>
-            <Heading size={1} fit caps>command line interface</Heading>
-              <Appear fid="1">
-                <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat omnis cum corrupti tempora ducimus, maxime perferendis quo, dicta deleniti itaque aut laborum rerum sit saepe. Cumque voluptate, consequuntur animi incidunt.</Text>
-              </Appear>
-              <Appear fid="2">
-                <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eius nesciunt nostrum iste ex praesentium. Temporibus aperiam cumque quos suscipit dicta error inventore, tempore quam, quas blanditiis maiores culpa laborum.</Text>
-              </Appear>
+            <Image src={images.node.replace("/", "")}></Image>
+            <p><Code fit="true">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+</Code></p>
+            <p><Code fit="true">$ nvm install 4</Code></p>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={2}>Git</Heading>
-            <Heading size={1} fit caps>source code management system</Heading>
+            <Heading size={1} fit caps>sistema de gerenciamento de código fonte</Heading>
             <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat omnis cum corrupti tempora ducimus, maxime perferendis quo, dicta deleniti itaque aut laborum rerum sit saepe. Cumque voluptate, consequuntur animi incidunt.</Text>
-            <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eius nesciunt nostrum iste ex praesentium. Temporibus aperiam cumque quos suscipit dicta error inventore, tempore quam, quas blanditiis maiores culpa laborum.</Text>
+            <Code>$ sudo apt-get install git-all</Code>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={2}>Git</Heading>
+            <Heading size={1} fit caps>sistema de gerenciamento de código fonte</Heading>
+            <Text>O que é controle de versão, e por que você deve se importar? O controle de versão é um sistema que registra as mudanças feitas em um arquivo ou um conjunto de arquivos ao longo do tempo de forma que você possa recuperar versões específicas.</Text>
             <Code>$ sudo apt-get install git-all</Code>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
