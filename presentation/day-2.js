@@ -36,7 +36,7 @@ import Interactive from "../assets/interactive";
 
 
 const images = {
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/imgs/markdown.png")
 };
 
 preloader(images);
@@ -65,9 +65,6 @@ export default class Presentation extends React.Component {
             </Link>
           </Slide>
           <Slide transition={["slide"]} bgColor="#000">
-            <Heading size={1} caps textColor="primary" textFont="primary">
-              2º Dia
-            </Heading>
             <List style={{color: '#fff'}}>
               <ListItem>JS Frameworks</ListItem>
               <ListItem>Componentes</ListItem>
