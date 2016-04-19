@@ -61,7 +61,7 @@ export default class Presentation extends React.Component {
               Departamento de Ciências da Computação
             </Heading>
             <Link href="https://github.com/luandro/intro-web-app">
-              <Text textColor="tertiary" textSize='0.8em'>http://edu.luandro.com/dia-2</Text>
+              <Text textColor="tertiary" textSize='0.8em'>http://web.luandro.com/dia-2</Text>
             </Link>
           </Slide>
           <Slide transition={["slide"]} bgColor="#000">
