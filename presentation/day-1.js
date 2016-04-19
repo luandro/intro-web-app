@@ -152,7 +152,7 @@ export default class Presentation extends React.Component {
             <Code>$ sudo apt-get install git-all</Code>
             <br />
             <br />
-            <Link href="#">mais informações</Link>
+            <Link href="http://rogerdudler.github.io/git-guide/index.pt_BR.html">mais informações</Link>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <Image src={images.github.replace("/", "")} height="120"></Image>
@@ -221,7 +221,7 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={2}>Exemplo simples</Heading>
-            <Text>Página do Github da organização <b>UFV-CC</b> para que cada membro possa colocar seu nome de usuário, usando a API do Google Drive.</Text>
+            <Text>Página do Github da organização <b>web-vicosa</b> para que cada membro possa colocar seu nome e nome de usuário, usando <Link href="https://www.firebase.com/">Firebase</Link>.</Text>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={2}>Recursos online</Heading>
