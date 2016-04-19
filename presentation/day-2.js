@@ -61,7 +61,7 @@ export default class Presentation extends React.Component {
               Departamento de Ciências da Computação
             </Heading>
             <Link href="https://github.com/luandro/intro-web-app">
-              <Text bold caps textColor="tertiary">veja no Github</Text>
+              <Text textColor="tertiary" textSize='0.8em'>http://edu.luandro.com/dia-2</Text>
             </Link>
           </Slide>
           <Slide transition={["slide"]} bgColor="#000">
@@ -77,10 +77,10 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading size={2} caps fit textColor="primary">JS Frameworks</Heading>
+            <Heading size={2} caps fit>JS Frameworks</Heading>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading size={2} caps fit textColor="primary">Componentes</Heading>
+            <Heading size={2} caps fit>Componentes</Heading>
           </Slide>
           <CodeSlide
             transition={[]}

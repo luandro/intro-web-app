@@ -129,7 +129,7 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["fade"]} bgColor="primary" notes="">
             <List>
-              <ListItem><b>HTTP</b>: <i>Hypertext Transfer Protocol</i> é um protocolo que define a linguagem que servidor e cliente comunicam um com o outro. É como a linguagem que permite que você faça o pedido na loja.</ListItem><br />
+              <ListItem><b>HTTP</b>: <i>Hypertext Transfer Protocol</i> é um protocolo que define a linguagem que servidor e cliente comunicam um com o outro. É como o idioma que permite que você faça o pedido na loja.</ListItem><br />
               <ListItem><b>Arquivos</b>: uma página ou aplicativo é feita de vários arquivos. <i>HTML, CSS e Javascript</i>, além de vários arquivos multimídia como imagens, videos, etc. Esses são os bens que vamos comprar na loja.</ListItem>
             </List>
           </Slide>
@@ -150,6 +150,9 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps>sistema de gerenciamento de código fonte</Heading>
             <Text>O controle de versão é um sistema que registra as mudanças feitas em um arquivo ou um conjunto de arquivos ao longo do tempo de forma que você possa recuperar versões específicas.</Text>
             <Code>$ sudo apt-get install git-all</Code>
+            <br />
+            <br />
+            <Link href="#">mais informações</Link>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <Image src={images.github.replace("/", "")} height="120"></Image>
@@ -182,7 +185,7 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["fade"]} bgColor="primary" notes="Nodejs revolucionou o desenvolvimento para web permitindo a programação do back-end em Javascript. Posteriormente ferramentas permitiram usar o sistema de módulos no cliente, fazendo do NPM o maior sistema de gerenciamento de módulos de qualquer linguagem.">
             <Image src={images.node.replace("/", "")}></Image>
-            <p><Code fit>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+            <p><Code textSize="0.8em">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
             </Code></p>
             <p><Code fit="true">$ nvm install 4</Code></p>
           </Slide>
