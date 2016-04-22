@@ -1,0 +1,58 @@
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      msg: 'carregando...',
+      name: '',
+      films: []
+    }
+  }
+  componentDidMount() {
+    const randomNum = Math.floor((Math.random() * 85) + 1);
+    fetch(`http://swapi.co/api/people/${randomNum}`)
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      data.films.map((film) => {
+        fetch(film)
+        .then((filmResponse) => {
+          return filmResponse.json()
+        })
+        .then((filmData) => {
+          this.setState({
+            films: this.state.films.concat(filmData.title)
+          })
+        })
+        .catch((filmErr) => {
+          console.log("Error in fetching films", filmErr)
+        })
+      })
+      this.setState({
+        msg: 'Pronto!',
+        name: data.name,
+      })
+    })
+    .catch((ex) => {
+      console.log('parsing failed', ex)
+    })
+  }
+  
+  render() {
+    return ( 
+      <div> 
+        <p>{this.state.msg}</p>
+        <h1>{this.state.name}</h1>
+        <ul>
+          {this.state.films.map((film, key) => {
+            return <li key={key}>{film}</li>
+          })}
+        </ul>
+      </div>
+    )
+  }
+}
+
+ReactDOM.render( < App / > ,
+  document.getElementById('container')
+);

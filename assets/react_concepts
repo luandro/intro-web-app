@@ -1,0 +1,99 @@
+//Transformação
+function CaixaComNome(name) {
+  return { 
+  	fontWeight: 'bold', 
+  	conteudoRotulo: name 
+  };
+}
+
+'Luandro Vieira' ->
+	{ 
+		fontWeight: 'bold', 
+		conteudoRotulo: 'Luandro Vieira' 
+	};
+
+//Abstração
+function CaixaChique(user) {
+  return {
+    borderStyle: '1px solid blue',
+    conteudoFilho: [
+      'Nome: ',
+      CaixaComNome(
+      	user.firstName + 
+      	' ' + 
+      	user.lastName
+      )
+    ]
+  };
+}
+
+{ 
+	firstName: 'Luandro', 
+	lastName: 'Vieira' 
+} ->
+{
+  borderStyle: '1px solid blue',
+  conteudoFilho: [
+    'Nome: ',
+    { 
+    	fontWeight: 'bold', 
+    	labelContent: 'Luandro Vieira' 
+    }
+  ]
+};
+
+//Composição
+function CaixaChique(children) {
+  return {
+    borderStyle: '1px solid blue',
+    children: children
+  };
+}
+
+function CaixaDoUsuario(user) {
+  return CaixaChique([
+    'Nome: ',
+    CaixaComNome(
+    	user.firstName + 
+    	' ' + 
+    	user.lastName
+    )
+  ]);
+}
+
+//Estado
+function CaixaChiqueComNome(user, likes, onClick) {
+  return CaixaChique([
+    'Nome: ', 
+    CaixaComNome(
+    	user.firstName + ' ' 
+    	+ user.lastName
+    ),
+    'Curtidas: ', 
+    CaixaDeCurtidas(likes),
+    BotaoCurtir(onClick)
+  ]);
+}
+
+// Detalhes da implementação
+
+var likes = 0;
+function curtir() {
+  likes++;
+  rerender();
+}
+
+CaixaChiqueComNome(
+  { 
+  	firstName: 'Luandro', 
+  	lastName: 'Vieira' 
+  },
+  likes,
+  curtir
+);
+
+
+
+
+
+
