@@ -217,7 +217,8 @@ export default class Presentation extends React.Component {
             <Heading caps>DOM Virtual</Heading>
             <Markdown>
               Por que todo esse trabalho so pra criar um elemento simples? Para que o HTML possa ser renderizado de forma otimizada ultilizando o DOM Virtual. Ele existe como uma [biblioteca independente](https://github.com/Matt-Esch/virtual-dom), mas foi popularizado pelo React. Ele recria o DOM toda vez que o estado do aplicativo muda, mas faz isso da mesma forma que o Git faz quando comitamos algo, com um diff, e re-renderiza apenas as partes que mudaram.
-            </Markdown>          
+            </Markdown>
+          </Slide>            
 
           <Slide transition={["zoom", "fade"]} bgColor="primary">
             <Heading size={2} caps fit>Componentes</Heading>
@@ -328,16 +329,6 @@ export default class Presentation extends React.Component {
             </List>  
           </Slide>
           
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-          </Slide>
           
         </Deck>
       </Spectacle>
