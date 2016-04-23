@@ -1,0 +1,82 @@
+const fireRef = new Firebase("https://vicosa.firebaseio.com/");
+const feedbackRef = fireRef.child("feedback")
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      course: 'CC',
+      grade: 3,
+      feedback: 'O que diabo é esse this do Javascript?'
+    }
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSelectChange = this.handleSelectChange.bind(this)
+    this.handleRangeChange = this.handleRangeChange.bind(this)
+    this.handleTextChange = this.handleTextChange.bind(this)
+  }
+ 
+  
+  render() {
+    return ( 
+      <div> 
+        <h1>Formulário de Feedback</h1>
+        <p>não se preocupe, é completamente anônimo...</p>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <h4>Selecione seu curso</h4>
+          <select onChange={this.handleSelectChange.bind(this)}>
+            <option value="CC">Ciências e Computação</option>
+            <option value="SI">Sistemas de Informação</option>
+          </select>
+          <br />
+          <h4>Quanto você está entendendo o React até agora?</h4>
+          <input type="range" min="0" max="10" 
+            value={this.state.grade} 
+            onChange={this.handleRangeChange.bind(this)} />
+            <span>{this.state.grade}</span>
+          <br />
+          <h4>Escreva suas dúvidas</h4>
+          <textarea rows="4" cols="50"
+            value={this.state.feedback}
+            onChange={this.handleTextChange.bind(this)}/>
+          <br />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    )
+  }
+  
+  handleSubmit(e) {
+    const { course, grade, feedback } = this.state
+    e.preventDefault()
+    feedbackRef.push({
+      course,
+      grade,
+      feedback
+    }, () => {
+      this.setState({
+        course: 'CC',
+        grade: 7,
+        feedback: 'Obrigado pelo feedback!'
+      })
+    })
+  }
+  handleSelectChange(e) {
+    this.setState({
+      course: e.target.value
+    })
+  }
+  handleRangeChange(e) {
+    this.setState({
+      grade: e.target.value
+    })
+  }
+  handleTextChange(e) {
+    this.setState({
+      feedback: e.target.value
+    })
+  }
+}
+
+ReactDOM.render( < App / > ,
+  document.getElementById('container')
+);

@@ -1,0 +1,37 @@
+class App extends React.Component {
+    
+  constructor(props) {
+    super(props)
+    this.state = {
+      feliz: true
+    }
+    this.toggleFace = this.toggleFace.bind(this)
+  }
+
+  render() {
+    return (
+      <div onClick={this.toggleFace} style={{fontSize: 50}}>
+        { this.state.feliz ? <p>😀</p> : <p>😞</p>}
+        {/*
+          if(this.state.feliz) {
+            return 😀
+          } else {
+            return 😞
+          }
+        */}
+      </div>
+    )
+  }
+
+  toggleFace() {
+    this.setState({
+      feliz: !this.state.feliz
+    })
+  }
+
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('container')
+);

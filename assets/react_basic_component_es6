@@ -1,6 +1,6 @@
 
 
-class App extends Component {
+class App extends React.Component {
     render() {
         return (
             <h1>{this.props.message} World!</h1>
@@ -12,7 +12,7 @@ class App extends Component {
 const App = ({message}) => <h1>{message} World!</h1>
 
 // Mau exemplo
-class App extends Component {
+class App extends React.Component {
     render() {
         return (
             <h1>{this.props.message} World!</h1>
@@ -22,7 +22,7 @@ class App extends Component {
 }
 
 // Bom exemplo
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>

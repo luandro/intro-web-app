@@ -14,6 +14,10 @@ class App extends React.Component {
       return response.json()
     })
     .then((data) => {
+      this.setState({
+        msg: 'Pronto!',
+        name: data.name,
+      })
       data.films.map((film) => {
         fetch(film)
         .then((filmResponse) => {
@@ -27,14 +31,10 @@ class App extends React.Component {
         .catch((filmErr) => {
           console.log("Error in fetching films", filmErr)
         })
-      })
-      this.setState({
-        msg: 'Pronto!',
-        name: data.name,
-      })
+      })    
     })
-    .catch((ex) => {
-      console.log('parsing failed', ex)
+    .catch((err) => {
+      console.log('Error in fetching character', err)
     })
   }
   
