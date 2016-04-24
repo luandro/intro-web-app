@@ -39,6 +39,7 @@ const images = {
   jquery: require("../assets/imgs-2/jquery.png"),
   react: require("../assets/imgs-2/react.png"),
   angular: require("../assets/imgs-2/angular.png"),
+  performance: require("../assets/imgs-2/performance.png"),
 };
 
 preloader(images);
@@ -71,7 +72,6 @@ export default class Presentation extends React.Component {
               <ListItem>Conceitos básicos de React</ListItem>
               <ListItem>Componentes</ListItem>              
               <ListItem>Eventos</ListItem>
-              <ListItem>Melhores práticas do React</ListItem>
               <ListItem>Arquitetura do aplicativo</ListItem>
               <ListItem>Início do desenvolvimento</ListItem>
             </List>
@@ -107,18 +107,17 @@ export default class Presentation extends React.Component {
             <Heading caps>Quem usa React?</Heading>
             <List>
               <div style={{float: 'left'}}>
-                <ListItem>Atlassian</ListItem>
+                <ListItem>AirBnB</ListItem>
                 <ListItem>BBC</ListItem>
                 <ListItem>Codecademy</ListItem>
                 <ListItem>Dropbox</ListItem>
-                <ListItem>EveryDollar</ListItem>
                 <ListItem>Facebook</ListItem>
                 <ListItem>Flipboard</ListItem>
                 <ListItem>GitHub</ListItem>
                 <ListItem>Imgur</ListItem>
+                <ListItem>Instagram</ListItem>
               </div>  
               <div style={{float: 'right'}}>
-                <ListItem>Instagram</ListItem>
                 <ListItem>Khan Academy</ListItem>
                 <ListItem>Netflix</ListItem>
                 <ListItem>PayPal</ListItem>
@@ -127,9 +126,22 @@ export default class Presentation extends React.Component {
                 <ListItem>WhatsApp</ListItem>
                 <ListItem>Wired</ListItem>
                 <ListItem>Yahoo</ListItem>
+                <Link href="https://github.com/facebook/react/wiki/Sites-Using-React"><ListItem>Mais...</ListItem></Link>
               </div>
             </List>
           </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary"
+            notes="Declarativo: olhando o código da UI fica fácil de entender exatamente como é o estado e como ele pode mudar. Componentes: quebre seu aplicativo em vários pequenos componentes, que podem ser re-ultilizados em várias partes do aplicativo ou até em outros projetos. Dom Virtual: Faz um diff no DOM, re-renderizando apenas as partes que mudaram de acordo com o estado. Universal: Pode ser usado para renderizar o aplicativo primeiro no servidor, depois continuar funcionando pelo cliente, que possibilita uma grande melhora na primeira renderização; também possibilita criar aplicativos nativos tanto para mobile quanto desktop, quanto TVs, relógios, carros, video-games, etc. Fluxo: facilita o modelo mental de como o aplicativo funciona. Ensina JS: A API do React é bem simples, e passamos a maior parte do tempo escrevendo puro JS, e o React nós induz e ensina a escrever melhor.">
+            <Heading caps fit>O que faz dele diferente?</Heading>
+            <List>
+              <ListItem>Declarativo</ListItem>
+              <ListItem>Usa estrutura de componentes</ListItem>
+              <ListItem>DOM Virtual</ListItem>
+              <ListItem>Universal (Renderiza no servidor, React-Native)</ListItem>
+              <ListItem>Fluxo de dados unilateral</ListItem>
+              <ListItem>Ensina a escrever Javascript</ListItem>
+            </List>
+          </Slide> 
           <Slide transition={["zoom", "fade"]} bgColor="primary">
             <Text textColor="secondary">A ideia fundamental do React é que interfaces podem ser expressadas como funções puras, que com um mesmo input sempre terá o mesmo output.</Text>
             <br />
@@ -144,18 +156,6 @@ export default class Presentation extends React.Component {
               </Quote>
               <Cite><Link textColor="#fff" href="https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#components-are-just-state-machines">Documentação React</Link></Cite>
             </BlockQuote>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary"
-            notes="Declarativo: olhando o código da UI fica fácil de entender exatamente como é o estado e como ele pode mudar. Componentes: quebre seu aplicativo em vários pequenos componentes, que podem ser re-ultilizados em várias partes do aplicativo ou até em outros projetos. Dom Virtual: Faz um diff no DOM, re-renderizando apenas as partes que mudaram de acordo com o estado. Universal: Pode ser usado para renderizar o aplicativo primeiro no servidor, depois continuar funcionando pelo cliente, que possibilita uma grande melhora na primeira renderização; também possibilita criar aplicativos nativos tanto para mobile quanto desktop, quanto TVs, relógios, carros, video-games, etc. Fluxo: facilita o modelo mental de como o aplicativo funciona. Ensina JS: A API do React é bem simples, e passamos a maior parte do tempo escrevendo puro JS, e o React nós induz e ensina a escrever melhor.">
-            <Heading caps fit>O que faz dele diferente?</Heading>
-            <List>
-              <ListItem>Declarativo</ListItem>
-              <ListItem>Usa estrutura de componentes</ListItem>
-              <ListItem>DOM Virtual</ListItem>
-              <ListItem>Universal (Renderiza no servidor, React-Native)</ListItem>
-              <ListItem>Fluxo de dados unilateral</ListItem>
-              <ListItem>Ensina a escrever Javascript</ListItem>
-            </List>
           </Slide>
           <CodeSlide
             transition={[]}
@@ -217,9 +217,13 @@ export default class Presentation extends React.Component {
           <Slide transition={["zoom", "fade"]} bgColor="backup">
             <Heading caps>DOM Virtual</Heading>
             <Markdown>
-              Por que todo esse trabalho so pra criar um elemento simples? Para que o HTML possa ser renderizado de forma otimizada ultilizando o DOM Virtual. Ele existe como uma [biblioteca independente](https://github.com/Matt-Esch/virtual-dom), mas foi popularizado pelo React. Ele recria o DOM toda vez que o estado do aplicativo muda, mas faz isso da mesma forma que o Git faz quando comitamos algo, com um diff, e re-renderiza apenas as partes que mudaram.
+              O React possibilita que o HTML possa ser renderizado de forma otimizada ultilizando o DOM Virtual. Ele existe como uma [biblioteca independente](https://github.com/Matt-Esch/virtual-dom), e usado em várias bibliotecas e frameworks, mas foi popularizado pelo React. Ele recria o DOM toda vez que o estado do aplicativo muda, mas faz isso da mesma forma que o Git faz quando comitamos algo, com um diff, e re-renderiza apenas as partes que mudaram.
             </Markdown>
-          </Slide>            
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Image src={images.performance.replace("/", "")} height="600"></Image>
+            <Link href="http://dapperdeveloper.com/2015/01/26/performance-of-angularjs-reactjs-and-knockoutjs-compared/">Fonte</Link>
+          </Slide>          
 
           <Slide transition={["zoom", "fade"]} bgColor="primary"
             notes="Componentes são o coração e a alma do React.">
@@ -419,19 +423,8 @@ export default class Presentation extends React.Component {
               { loc: [50, 55], note: "Enviamos para o Firebase os dados do estado. No ES6 quando colocamos apenas um item como course, ele automaticamente entende que {course: course} " },
               { loc: [54, 61], note: "O método push do Firebase possui um callback, então quando o envio é concluído atualizamos o estado para que o usuário saiba que foi enviado" },
           ]}/>
-
-
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit textColor="secondary">React</Heading>
-            <Heading caps fit>Melhores Práticas</Heading>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Componentes</Heading>
-            <Heading caps fit textColor="secondary">Burros vs Espertos</Heading>
-          </Slide>
-         
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading size={2}>Alternativas</Heading>
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading size={2} textColor="#fff">Alternativas</Heading>
             <List>
               <ListItem>
                 <Text textSize="0.8em"><Link href="https://github.com/trueadm/inferno">InfernoJS</Link>: implementação mais rápida do Virtual DOM, com API do React</Text>
@@ -442,10 +435,41 @@ export default class Presentation extends React.Component {
               <ListItem>
                 <Text textSize="0.8em"><Link href="https://github.com/developit/preact">Preact</Link>: com apenas 3Kb, um ecosistema próprio, mas similar ao React</Text>
               </ListItem>
+              <ListItem>
+                <Text textSize="0.8em"><Link href="https://github.com/dekujs/deku">Deku</Link>: Renderiza interfaces usando funções puras e o DOM Virtual</Text>
+              </ListItem>
             </List>  
           </Slide>
-          
-          
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading size={2} fit textColor="#fff">Bibliotecas e Frameworks Alternativos</Heading>
+            <List>
+              <ListItem>
+                <Text textSize="0.8em"><Link href="https://github.com/riot/riot">RiotJS</Link>: Biblioteca para criação de interfaces similar ao React com apenas 8Kb</Text>
+              </ListItem>
+              <ListItem>
+                <Text textSize="0.8em"><Link href="http://mithril.js.org/">Mithril</Link>: Com apenas 8Kb, tem uma API mínima e por isso é muito simples de aprender</Text>
+              </ListItem>
+              <ListItem>
+                <Text textSize="0.8em"><Link href="http://cycle.js.org/">CycleJS</Link>: Um framework de Javascript funcional e reativo para códigos mais limpos</Text>
+              </ListItem>
+              <ListItem>
+                <Text textSize="0.8em"><Link href="http://elm-lang.org/">Linguagem Elm</Link>: Programação funcional para o navegador</Text>
+              </ListItem>
+            </List>  
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit textColor="secondary">Arquitetura</Heading>
+            <Heading caps fit>do aplicativos</Heading>
+            <List>
+              <ListItem>Arquitetura de componentes</ListItem>
+              <ListItem>Modelo de dados</ListItem>
+              <ListItem>Estados do aplicativo</ListItem>
+            </List>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit textColor="secondary">Início</Heading>
+            <Heading caps fit>do desenvolvimento</Heading>
+          </Slide>
         </Deck>
       </Spectacle>
     );

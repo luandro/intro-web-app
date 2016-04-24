@@ -54,6 +54,7 @@ export default class MainIndex extends React.Component {
 		            	</Heading>
 		            	<p><RouteLink style={{color: '#fff'}} to="dia-1">Ferramentas e introdução a web</RouteLink></p>
 		            	<p><RouteLink style={{color: '#fff'}} to="dia-2">Ecosistema React e Arquitetura de Componentes</RouteLink></p>
+		            	<p><RouteLink style={{color: '#fff'}} to="dia-3">Ferramentas e Desenvolvimento do Front-End</RouteLink></p>
 		            	<Link href="https://github.com/luandro/intro-web-app">
 			              	<Text bold caps textColor="tertiary">Veja no Github</Text>
 			            </Link>
