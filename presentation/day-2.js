@@ -459,7 +459,7 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="primary">
             <Heading caps fit textColor="secondary">Arquitetura</Heading>
-            <Heading caps fit>do aplicativos</Heading>
+            <Heading caps fit>do aplicativo</Heading>
             <List>
               <ListItem>Arquitetura de componentes</ListItem>
               <ListItem>Modelo de dados</ListItem>
