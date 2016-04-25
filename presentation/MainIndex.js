@@ -52,9 +52,18 @@ export default class MainIndex extends React.Component {
 		            	<Heading size={1} fit caps lineHeight={1} textColor="#fff" style={{textShadow: '2px 2px #000'}}>
 		             		Introdução a Criação de Aplicativos para Web
 		            	</Heading>
-		            	<p><RouteLink style={{color: '#fff'}} to="dia-1">Ferramentas e introdução a web</RouteLink></p>
-		            	<p><RouteLink style={{color: '#fff'}} to="dia-2">Ecosistema React e Arquitetura de Componentes</RouteLink></p>
-		            	<p><RouteLink style={{color: '#fff'}} to="dia-3">Ferramentas e Desenvolvimento do Front-End</RouteLink></p>
+		            	<Heading size={0.5} caps lineHeight={1} textColor="primary" style={{textShadow: '2px 2px #000'}}>
+		             		1ª semana
+		            	</Heading>
+		            	<p><RouteLink style={{color: '#fff'}} to="dia-1">Dia 1 - Ferramentas e introdução a web</RouteLink></p>
+		            	<Heading size={0.5} caps lineHeight={1} textColor="primary" style={{textShadow: '2px 2px #000'}}>
+		             		2ª semana
+		            	</Heading>
+		            	<p><RouteLink style={{color: '#fff'}} to="dia-2">Dia 2 - Ecosistema React e Arquitetura de Componentes</RouteLink></p>
+		            	<p><RouteLink style={{color: '#fff'}} to="dia-3">Dia 3 - Ferramentas e Desenvolvimento do Front-End</RouteLink></p>
+		            	<Heading size={0.5} caps lineHeight={1} textColor="primary" style={{textShadow: '2px 2px #000'}}>
+		             		3ª semana em breve
+		            	</Heading>
 		            	<Link href="https://github.com/luandro/intro-web-app">
 			              	<Text bold caps textColor="tertiary">Veja no Github</Text>
 			            </Link>
