@@ -43,6 +43,7 @@ const images = {
   babel: require("../assets/imgs-3/babel.png"),
   git: require("../assets/imgs/git.png"),
   babel: require("../assets/imgs-3/babel.png"),
+  reactrouter: require("../assets/imgs-3/react-router.png"),
 };
 
 preloader(images);
