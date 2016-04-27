@@ -1,0 +1,15 @@
+/* index.js */
+
+render(
+	<AppContainer component={App} />,
+	rootEl
+)
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(
+      <AppContainer component={require('./App').default} />,
+      rootEl
+    );
+  });
+}

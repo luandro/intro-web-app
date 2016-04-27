@@ -2,9 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index',
+  entry: './src/App',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/static/'
   }
 };
