@@ -1,0 +1,44 @@
+/* routes.js */
+import React from 'react'
+import { Route, IndexRoute } from 'react-router'
+import AppContainer from './containers/AppContainer'
+import MealContainer from './containers/MealContainer'
+import About from './components/About'
+import NotFound from './components/NotFound'
+
+export default (
+	<Route component={AppContainer}>
+		<Redirect from="/" to="/ru"  />
+		<Route path="/ru(/:nextMeal)" component={MealContainer} />
+		<Route path="/mu(/:nextMeal)" component={MealContainer} />
+		<Route path="/about" component={About} />
+		<Route path="*" component={NotFound} />
+	</Route>
+)
+
+
+/* App.js */
+import React from 'react'
+import { Router, browserHistory } from 'react-router'
+import routes from './routes'
+
+const App = ({}) =>  {
+    return (
+        <Router history={browserHistory} routes={routes} />
+    )
+}
+
+export default App
+
+
+/* MealContainer.js */
+import { browserHistory } form 'react-router'
+
+componentWillUpdate() {
+    if(this.props.location.pathname === '/ru') {
+      browserHistory.push(`/ru/02-05-lunch`);
+      this.setState({
+        parametro: this.props.params.nextMeal
+      })
+    }
+  }

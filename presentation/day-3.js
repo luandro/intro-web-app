@@ -75,7 +75,6 @@ export default class Presentation extends React.Component {
               <ListItem>Webpack</ListItem>
               <ListItem>Melhores Práticas de React</ListItem>
               <ListItem>React-Router</ListItem>
-              <ListItem>Aplicativos Progressivos para Web</ListItem>
               <ListItem>Próximos passos</ListItem>
               <ListItem>Desenvolvimento do Aplicativo</ListItem>
             </List>
@@ -307,8 +306,7 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="backup">
             <Heading caps fit>DefaultProps</Heading>
-            <Markdown></Markdown>
-            Defaults are not only helpful, this will reveals some code smells if you are passing around props that could be clarified further. If it isn't required and doesn't have a default what the hell is it?
+            <Markdown>Default não apenas ajudam a evitar errors, mas também auxiliam decoberta de `props` que precisam ser clarificadas. Se não é obrigatória e não tem um valor default, o que é?</Markdown>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="backup">
             <Heading caps fit>Como usa-los</Heading>
@@ -318,12 +316,112 @@ export default class Presentation extends React.Component {
               margin="20px auto"/>
               <Link href="https://facebook.github.io/react/docs/reusable-components.html">veja mais</Link>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>React-Router</Heading>
+          <Slide transition={["zoom", "fade"]} bgColor="#fff">
+            <Image src={images.reactrouter.replace("/", "")} height="350"></Image>
+            <Text>Uma solução completa de roteamente de urls para aplicativos React, com uma API simples e poderosa</Text>
+            <br />
+            <Text textSize="0.8em">
+              <Link href="https://css-tricks.com/learning-react-router/">Guia detalhado </Link>
+              e
+              <Link href="https://github.com/reactjs/react-router"> Página oficial</Link>
+            </Text>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Aplicativos-Progressivos</Heading>
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading caps fit>API Básica: Componentes</Heading>
+            <List>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#router">{'<Router>'}</Link>: componente primário que mantém as urls e a UI em sincronia
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#link">{'<Link>'}</Link>: componente que permite navegar pelo aplicativo, funciona similar a uma tag {'<a>'}
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#route">{'<Route>'}</Link>: usado para mapear declarativamente a hierarquia de componentes do aplicativo
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#redirect">{'<Redirect>'}</Link>: cria um redirecionameto para outra rota para manter URL antigas
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#indexroute">{'<IndexRoute>'}</Link>: permite definir um 'filho' default para uma rota 'pai', quando sua URL é acessada
+              </ListItem>
+            </List>
+            <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md">Veja mais</Link>
           </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading caps fit>API Básica: Propriedades</Heading>
+            <List>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#location">location</Link>: a localização atual
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#params">params</Link>: o segmento dinâmico da rota
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#route-1">route</Link>: a rota que renderizou esse componente
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#children-1">children</Link>: o elemento de rota filho a ser renderizado
+              </ListItem>
+            </List>
+            <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md">Veja mais</Link>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading caps fit>API Básica: Históricos</Heading>
+            <List>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#browserhistory">browserHistory</Link>: usa a History API do HTML5 quando disponível, ou então atualiza a página. É a maneira preferencial para páginas modernas.
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#hashhistory">hashHistory</Link>: usa hashes e chaves de query para rastrear o estado, gera urls do tipo #Aj9Io7u87
+              </ListItem>
+            </List>
+            <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md">Veja mais</Link>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading caps fit>API Básica: Utilitários</Heading>
+            <List>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/upgrade-guides/v2.0.0.md#navigating-inside-deeply-nested-components">browserHistory.push('/')</Link>: função que pode ser usada para mudar a URL
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#onenternextstate-replace-callback">onEnter</Link>: pode ser usado para invocar funções antes que uma rota específica seja acessada; útil para rotas que necessitam de autenticação
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#onchangeprevstate-nextstate-replace-callback">onChange</Link>: invocado quando a localização muda, mas não se sai ou entra na rota, por exemplo quando um parametro muda
+              </ListItem>
+              <ListItem textSize="0.8em" textColor="primary">
+                <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md#onleave">onLeave</Link>: invocado logo que se for sair de uma rota
+              </ListItem>
+            </List>
+            <Link href="https://github.com/reactjs/react-router/blob/master/docs/API.md">Veja mais</Link>
+          </Slide>
+          <CodeSlide
+           transition={[]}
+           lang="js"
+           textSize="0.8em"
+           code={require("raw!../assets/react_router")}
+           ranges={[
+             { loc: [0, 150], title: "React Router" },
+             { loc: [2, 3], note: "Importamos os componentes de roteamento do React-Router" },
+             { loc: [3, 7], note: "Importamos os componentes do noso aplicativo" },
+             { loc: [8, 17], note: "Exportamos a função que retorna nosso mapa de rotas" },
+             { loc: [9, 10], note: "Nesse caso todos componentes são filhos do AppContainer" },
+             { loc: [10, 11], note: "A rota / será redirecionada a rota /ru" },
+             { loc: [11, 12], note: "As rotas /ru, /ru/qualquerCoisa serão redirecionadas para o componente MealContainer, qualquerCoisa será acessível como this.props.params.nextMeal no componente" },
+             { loc: [12, 13], note: "As rotas /mu, /mu/qualquerCoisa serão redirecionadas para o componente MealContainer, qualquerCoisa será acessível como this.props.params.nextMeal no componente" },
+             { loc: [13, 14], note: "A rota /about será direcionada para o componente About" },
+             { loc: [14, 15], note: "Qualquer outra rota que não seja uma das a cima será direcionada para o component NotFound" },
+             { loc: [19, 31], note: "Agora no componente raiz App" },
+             { loc: [21, 22], note: "Importamos o componente Router e o método de histórico browserHistory" },
+             { loc: [22, 23], note: "Importamos nosso arquivo de rotas" },
+             { loc: [26, 27], note: "Renderizamos o componente Router passando o método de histórico e as rotas" },
+             { loc: [34, 44], note: "Agora no componente que colocamos no mapa de rotas" },
+             { loc: [34, 35], note: "Importamos o método browserHistory" },
+             { loc: [37, 38], note: "Podemos acessar a propriedade location para verificar qual nossa localização, acessando a propriedade pathname" },
+             { loc: [38, 39], note: "Podemos usar o método browserHistory para mudar a URL" },
+             { loc: [40, 41], note: "Podemos acessar a propriedade 'params' para obter os parâmetros que foram passados para rota" },
+         ]}/>
           <Slide transition={["zoom", "fade"]} bgColor="primary">
             <Heading caps fit>Próximos passos</Heading>
             <List>
@@ -338,9 +436,12 @@ export default class Presentation extends React.Component {
             <List>
               <ListItem textSize="1em"><Link textColor="#fff" href="https://github.com/pazguille/offline-first">Off-line first</Link>, para que os aplicativos possam ser usados sem conexção e mantenham os dados do aparelho sincronizados com o servidor</ListItem>
               <ListItem textSize="1em"><Link textColor="#fff" href="http://www.sitepoint.com/javascript-testing-unit-functional-integration/">Testar</Link> o aplicativo</ListItem>
+                <ListItem textSize="1em"><Link textColor="#fff" href="https://webpack.github.io/docs/code-splitting.html">Code-splitting</Link>, que é uma forma inteligente de dividir o aplicativo em pedaços menores de arquivos, para que o usuário baixe apenas o que precisar</ListItem>
             </List>
           </Slide>
-
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>Vamos desenvolver?</Heading>
+          </Slide>
         </Deck>
       </Spectacle>
     );
