@@ -269,14 +269,76 @@ export default class Presentation extends React.Component {
             <Heading caps fit textColor="secondary">Apresentação vs Containers</Heading>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Markdown></Markdown>
+            <Heading caps fit>Componentes de Apresentação</Heading>
+            <List>
+              <ListItem>Responsáveis por mostrar a aparência (estilo e markup)</ListItem>
+              <ListItem>Recebem 'props' dos containers</ListItem>
+              <ListItem>Raramente possuem 'state', quando existe é somente estado da interface</ListItem>
+              <ListItem>Nomeados apartir do componente</ListItem>
+            </List>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>Componentes Containers</Heading>
+            <List>
+              <ListItem>Comparados com o 'C' no MVC (Model-View-Controller)</ListItem>
+              <ListItem>Descrevem como as coisas funcionam</ListItem>
+              <ListItem>Produzem dados para o aplicativo e fazem Ajax</ListItem>
+              <ListItem>Possuem 'state' e são responsáveis por muda-lo</ListItem>
+              <ListItem>Nomeados apartir do componente com *Container</ListItem>
+            </List>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>Vantagens desse padrão</Heading>
+            <List>
+              <ListItem>Melhor separação das preocupações no aplicativo</ListItem>
+              <ListItem>Melhor re-ultilização, pois os componentes de apresentação podem ser usados em outras partes do aplicativo</ListItem>
+              <ListItem>Fácil para que um designer trabalhe nos componentes de apresentação sem correr o risco de mexer com a lógica</ListItem>
+              <ListItem>Nós força a extrair componentes de layout, para não precisar ficar repetindo markup</ListItem>
+            </List>
+            <Link href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">veja mais</Link>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="primary">
             <Heading caps fit>Componentes</Heading>
             <Heading caps fit textColor="secondary">PropTypes e DefaultProps</Heading>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading caps fit>PropTypes</Heading>
+            <Markdown>Pense no `PropTypes` como uma carta de amor para o próximo desenvolvedor que vai trabalhar no componente depois de você. Seu componente deve ser o mais declarativo possível, e os erros do React usando essa propriedade são claros e específicos.</Markdown>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading caps fit>DefaultProps</Heading>
             <Markdown></Markdown>
+            Defaults are not only helpful, this will reveals some code smells if you are passing around props that could be clarified further. If it isn't required and doesn't have a default what the hell is it?
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="backup">
+            <Heading caps fit>Como usa-los</Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/react_proptypes_defaultprops")}
+              margin="20px auto"/>
+              <Link href="https://facebook.github.io/react/docs/reusable-components.html">veja mais</Link>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>React-Router</Heading>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>Aplicativos-Progressivos</Heading>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>Próximos passos</Heading>
+            <List>
+              <ListItem textSize="1em">Padrão de design <Link textColor="#fff" href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207">Flux</Link> ( <Link textColor="#fff" href="https://github.com/reactjs/redux">Redux</Link>, <Link textColor="#fff" href="https://github.com/mobxjs/mobx">MobX</Link> ) para manejar estado entre componentes que não são diretamente relacionados; essencial para apps complexos</ListItem>
+              <ListItem textSize="1em"><Link textColor="#fff" href="https://www.typescriptlang.org/">TypeScript</Link> ou <Link textColor="#fff" href="http://flowtype.org/">Flow</Link> para checagem de erros</ListItem>
+              <ListItem textSize="1em">Renderizar no servidor ( <Link textColor="#fff" href="https://www.lullabot.com/articles/what-is-an-isomorphic-application">aplicativos isomórficos</Link> ) para melhor tempo de renderização e SEO</ListItem>
+              <ListItem textSize="1em">Aplicativos nativos para desktop ( <Link textColor="#fff" href="http://electron.atom.io/">Electron</Link>) e mobile (<Link textColor="#fff" href="https://facebook.github.io/react-native/">React Native</Link>)</ListItem>
+            </List>
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>Próximos passos</Heading>
+            <List>
+              <ListItem textSize="1em"><Link textColor="#fff" href="https://github.com/pazguille/offline-first">Off-line first</Link>, para que os aplicativos possam ser usados sem conexção e mantenham os dados do aparelho sincronizados com o servidor</ListItem>
+              <ListItem textSize="1em"><Link textColor="#fff" href="http://www.sitepoint.com/javascript-testing-unit-functional-integration/">Testar</Link> o aplicativo</ListItem>
+            </List>
           </Slide>
 
         </Deck>
