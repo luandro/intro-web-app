@@ -1,0 +1,30 @@
+const express = require('express')
+const app = express()
+const request = require('request')
+const cheerio = require('cheerio')
+const port = 4000
+const url = 'http://www.cardapioru.com.br'
+
+app.get('/cafe', (req, res) => {
+  request(url, (error, response, html) => {
+    if(!error){
+      const $ = cheerio.load(html)
+      const daysToFetch = $('#refeicoesRU').attr('quantidademax')
+      const data = []
+      for (let i = 1; i <= daysToFetch; i++) {
+        let day = '#RUdia'+i
+        let date = $(day).attr('name')
+        let meal = $(day+' .cafeDaManha .descricaoRefeicao').text()
+        data.push({
+          data: date,
+          breakfast: meal
+        })
+      }
+    }
+    res.status(200).json(data)
+  })
+})
+
+app.listen(port, (err) => {
+  console.log(`Servidor ouvindo na porta ${port}`)
+})
